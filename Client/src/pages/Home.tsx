@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 
-const Home = () => {
+function Home(): JSX.Element {
     const navigate = useNavigate();
     const [cookies, removeCookie] = useCookies([]);
     const [username, setUsername] = useState("");
@@ -32,6 +32,7 @@ const Home = () => {
         removeCookie("token");
         navigate("/login");
     };
+
     return (
         <>
             <div className="home_page">
