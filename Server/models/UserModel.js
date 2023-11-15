@@ -1,7 +1,7 @@
 const bycrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: [true, "Your email address is required"],
@@ -24,7 +24,7 @@ const schema = mongoose.Schema({
 });
   
 
-userSchame.pre('save', async function(next){
+userSchema.pre('save', async function(next){
     this.password = await bycrypt.hash(this.password, 12)
     next();
 })

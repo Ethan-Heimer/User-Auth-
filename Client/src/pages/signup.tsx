@@ -21,11 +21,11 @@ function Signup(): JSX.Element {
         });
     };
 
-    const handleError = (err: any) => {
-        toast.error(err, {
-            position: "botton-left",
-        });
-    }
+    // const handleError = (err: any) => {
+    //     toast.error(err, {
+    //         position: "botton-left",
+    //     });
+    // }
     
     const handleSuccess = (msg: any) => {
         toast.success(msg, {
@@ -34,7 +34,6 @@ function Signup(): JSX.Element {
     }
 
     const handleSubmit = async (e: any) => {
-        e.preventDefault();
         try {
             const { data } = await axios.post(
                 "http://localhost:4000/signup",
@@ -50,7 +49,7 @@ function Signup(): JSX.Element {
                     navigate("/");
                 }, 1000);
             } else {
-                handleError(message);
+                // handleError(message);
             }
         } 
         catch (error) {

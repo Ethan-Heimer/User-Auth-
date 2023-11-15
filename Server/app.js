@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
 const app = express();
-const authRoute = require("./routes/AuthRoute");
+const authRoute = require("./routes/Auth.Route");
 const cookieParser = require("cookie-parser");
 
 const {MONGO_URL, PORT} = process.env;
