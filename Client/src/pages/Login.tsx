@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
+import '../index.css';
 
 function Login(): JSX.Element {
     const navigate = useNavigate();
@@ -62,7 +63,7 @@ function Login(): JSX.Element {
 
     return (
         <>
-            <div className="form-container">
+            <div className="form_container">
                 <h2>Login Account</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -75,7 +76,7 @@ function Login(): JSX.Element {
                     </div>
                     <button type="submit">Submit</button>
                     <span>Already have an account? <Link to={"/signup"}>Signup</Link></span>
-                    </form>
+                </form>
             </div>
             <ToastContainer />
         </>
